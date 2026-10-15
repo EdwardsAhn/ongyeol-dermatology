@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <meta name="description" content="온결 피부과 — 내 피부의 속도에 맞춘 세심한 진료와 상담을 안내합니다.">
+  <title>온결 피부과 | 피부를 살피는 시간</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f5f0;
+      --white: #fbfcf8;
+      --ink: #1d302a;
+      --muted: #69756e;
+      --line: #d9dfd8;
+      --sage: #c6d0c4;
+      --moss: #496356;
+      --lime: #dce9a9;
+      --serif: "Noto Serif KR", "Batang", serif;
+      --sans: "Noto Sans KR", sans-serif;
+      --latin: "DM Sans", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #78947f; outline-offset: 4px; }
+    .shell { width: min(1320px, calc(100% - 104px)); margin: 0 auto; }
+    .topline { min-height: 39px; display: flex; align-items: center; justify-content: center; background: var(--ink); color: #eef1e9; font-size: 11px; letter-spacing: .025em; }
+    .topline span { color: var(--lime); margin-right: 8px; font-family: var(--latin); }
+    .nav { height: 80px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 600; letter-spacing: -.06em; }
+    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #82978a; border-radius: 50% 50% 44% 56%; transform: rotate(-12deg); color: var(--moss); }
+    .brand-mark svg { transform: rotate(12deg); }
+    .nav-links { display: flex; gap: 37px; align-items: center; color: #46534c; font-size: 13px; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: #829457; }
+    .nav-cta { padding: 12px 20px; border: 1px solid #a9b4a9; border-radius: 3px; color: var(--ink); font-size: 12px; }
+    .menu-toggle { display: none; border: 0; background: none; color: var(--ink); font: inherit; }
+    .hero { min-height: 650px; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 5.6%; padding: 53px 0 76px; }
+    .hero-copy { position: relative; z-index: 1; padding: 14px 0 10px; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 28px; color: var(--moss); font-size: 12px; letter-spacing: .03em; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: #91a090; }
+    h1 { margin: 0; font-family: var(--serif); font-size: clamp(45px, 5.4vw, 73px); font-weight: 400; letter-spacing: -.085em; line-height: 1.38; word-break: keep-all; }
+    .hero-copy > p:not(.eyebrow) { margin: 24px 0 32px; color: var(--muted); font-size: 14px; line-height: 2.05; word-break: keep-all; }
+    .hero-actions { display: flex; gap: 11px; align-items: center; }
+    .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 0 19px; border: 1px solid var(--ink); border-radius: 2px; font-size: 12px; transition: background .2s, color .2s; }
+    .button.primary { background: var(--ink); color: #f7f8f3; }
+    .button.primary:hover { background: var(--moss); border-color: var(--moss); }
+    .button.secondary:hover { background: #e7ebe3; }
+    .arrow { font-family: var(--latin); font-size: 16px; line-height: 1; }
+    .hero-note { margin-top: 48px; display: flex; gap: 10px; align-items: center; color: #7b857e; font-size: 11px; }
+    .hero-note::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #8ca37d; }
+    .hero-art { height: 490px; max-width: 535px; position: relative; margin-left: auto; width: 100%; background: #e0e5dc; overflow: hidden; border-radius: 49% 49% 3px 3px; }
+    .hero-art::before { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(247,249,241,.72); border-radius: 49% 49% 2px 2px; z-index: 2; pointer-events: none; }
+    .art-wash { position: absolute; inset: 0; background: radial-gradient(ellipse at 69% 28%, rgba(246,239,216,.88), transparent 33%), radial-gradient(ellipse at 29% 73%, rgba(165,183,159,.85), transparent 38%), linear-gradient(145deg,#dce3d9 2%,#bacbbb 49%,#e4e1d3 100%); }
+    .portrait { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-caption { position: absolute; z-index: 3; left: 27px; bottom: 25px; color: #33463e; font-family: var(--serif); font-size: 12px; letter-spacing: .02em; }
+    .hero-caption span { display: block; margin-bottom: 8px; color: #64756a; font-family: var(--latin); font-size: 9px; letter-spacing: .15em; }
+    .side-index { position: absolute; z-index: 3; top: 35px; right: 32px; color: #52645a; font-family: var(--latin); font-size: 10px; letter-spacing: .1em; writing-mode: vertical-rl; }
+    .intro-band { background: var(--ink); color: #edf0e9; }
+    .intro-inner { min-height: 174px; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 38px; }
+    .intro-item { display: flex; gap: 17px; align-items: flex-start; }
+    .intro-icon { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; color: var(--lime); border: 1px solid rgba(220,233,169,.42); border-radius: 50%; }
+    .intro-item strong { display: block; margin: 1px 0 8px; font-size: 13px; font-weight: 500; }
+    .intro-item p { margin: 0; color: #b8c3bb; font-size: 11px; line-height: 1.8; }
+    section.content { padding: 118px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 48px; }
+    .section-head h2 { margin: 0; font-family: var(--serif); font-size: clamp(32px,4.2vw,48px); font-weight: 400; letter-spacing: -.07em; line-height: 1.5; }
+    .section-head p { max-width: 325px; margin: 0 0 7px; color: var(--muted); font-size: 12px; line-height: 1.9; word-break: keep-all; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #bfc9c0; border-bottom: 1px solid #bfc9c0; }
+    .service { min-height: 256px; padding: 30px 30px 26px 0; position: relative; }
+    .service + .service { padding-left: 30px; border-left: 1px solid var(--line); }
+    .service-index { display: block; margin-bottom: 40px; color: #819087; font-family: var(--latin); font-size: 11px; }
+    .service h3 { margin: 0 0 14px; font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.04em; }
+    .service p { max-width: 300px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.9; word-break: keep-all; }
+    .service-mark { position: absolute; top: 27px; right: 27px; color: #879b8c; }
+    .approach { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; background: #e7ebe3; }
+    .approach-art { min-height: 515px; position: relative; overflow: hidden; background: linear-gradient(135deg,#cdd8cc,#b8c9bb 48%,#e0dfce); }
+    .approach-art::after { content: ""; position: absolute; width: 62%; aspect-ratio: 1; border: 1px solid rgba(251,252,248,.75); border-radius: 50%; left: 19%; top: 17%; }
+    .approach-art svg { position: absolute; inset: 8% 5%; width: 90%; height: 84%; }
+    .approach-label { position: absolute; z-index: 2; bottom: 28px; left: 31px; color: #42554b; font-family: var(--latin); font-size: 10px; letter-spacing: .13em; }
+    .approach-copy { padding: 62px clamp(34px,7vw,100px); }
+    .approach-copy .eyebrow { margin-bottom: 20px; }
+    .approach-copy h2 { max-width: 470px; margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(32px,4vw,47px); letter-spacing: -.075em; line-height: 1.55; word-break: keep-all; }
+    .approach-copy > p { max-width: 425px; margin: 19px 0 27px; color: var(--muted); font-size: 12px; line-height: 2; word-break: keep-all; }
+    .approach-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #c5cec5; }
+    .approach-list li { display: flex; gap: 20px; align-items: center; padding: 14px 0; border-bottom: 1px solid #c5cec5; font-size: 12px; }
+    .approach-list li span { color: #819087; font-family: var(--latin); font-size: 10px; }
+    .visit { padding-bottom: 130px !important; }
+    .visit-steps { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); }
+    .visit-step { padding: 27px 27px 0 0; }
+    .visit-step + .visit-step { padding-left: 28px; border-left: 1px solid var(--line); }
+    .visit-step .step-dot { width: 8px; height: 8px; margin: 0 0 28px; border-radius: 50%; background: #8da18f; }
+    .visit-step h3 { margin: 0 0 11px; font-size: 15px; font-weight: 500; }
+    .visit-step p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.9; word-break: keep-all; }
+    .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; padding: 96px 0 112px; border-top: 1px solid var(--line); }
+    .faq h2 { margin: 0; font-family: var(--serif); font-size: 39px; font-weight: 400; letter-spacing: -.07em; }
+    .faq > div:first-child p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .faq-list { border-top: 1px solid #bfc9c0; }
+    details { border-bottom: 1px solid var(--line); }
+    summary { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 20px 0; cursor: pointer; list-style: none; font-size: 13px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: #77877c; font-family: var(--latin); font-size: 18px; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 600px; margin: -3px 30px 20px 0; color: var(--muted); font-size: 12px; line-height: 1.9; word-break: keep-all; }
+    .contact { padding: 82px 0; background: #e5e9e1; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .contact h2 { max-width: 500px; margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(32px,4.4vw,51px); letter-spacing: -.075em; line-height: 1.5; }
+    .contact h2 span { color: #61786a; }
+    .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 30px; border-top: 1px solid #bec8be; padding-top: 22px; }
+    .contact-info div { font-size: 12px; }
+    .contact-info small { display: block; margin-bottom: 8px; color: #77847a; font-size: 10px; }
+    .contact-info strong { font-weight: 500; }
+    .contact-status { grid-column: 1/-1; margin: 2px 0 0; color: #758078; font-size: 10px; line-height: 1.8; }
+    footer { padding: 28px 0; background: var(--ink); color: #c2cbc2; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: 10px; }
+    .footer-brand { color: #f2f4ee; font-size: 14px; font-weight: 500; }
+    .footer-meta { margin-top: 7px; color: #8f9d92; }
+    .footer-right { text-align: right; color: #9daa9f; line-height: 1.8; }
+    @media (max-width: 850px) {
+      .shell { width: min(100% - 52px, 700px); }
+      .nav-links { gap: 19px; }
+      .hero { min-height: auto; gap: 4%; padding: 60px 0 65px; }
+      .hero-art { height: 420px; }
+      h1 { font-size: clamp(42px,6vw,57px); }
+      .intro-inner { gap: 20px; }
+      .intro-item { gap: 10px; }
+      .approach { grid-template-columns: .85fr 1.15fr; }
+      .approach-art { min-height: 450px; }
+      .approach-copy { padding: 50px 36px; }
+      .faq { gap: 40px; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: calc(100% - 40px); }
+      .topline { min-height: 34px; font-size: 10px; }
+      .nav { height: 68px; }
+      .brand { font-size: 17px; }
+      .menu-toggle { display: block; padding: 10px 0 10px 12px; font-size: 12px; cursor: pointer; }
+      .nav-links { display: none; position: absolute; z-index: 10; top: 102px; left: 0; right: 0; padding: 18px 20px 22px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 12px 0; }
+      .nav-links .nav-cta { margin-top: 8px; text-align: center; }
+      .hero { display: flex; flex-direction: column; align-items: stretch; gap: 33px; padding: 47px 0 55px; }
+      .hero-copy { padding: 0; }
+      .eyebrow { margin-bottom: 19px; font-size: 11px; }
+      h1 { font-size: clamp(42px,12vw,59px); line-height: 1.39; }
+      .hero-copy > p:not(.eyebrow) { margin: 17px 0 22px; font-size: 12px; }
+      .hero-actions { gap: 8px; }
+      .button { flex: 1; min-height: 47px; padding: 0 12px; font-size: 11px; }
+      .hero-note { margin-top: 25px; font-size: 10px; }
+      .hero-art { width: 100%; max-width: none; height: min(111vw,460px); }
+      .intro-inner { padding: 29px 0; grid-template-columns: 1fr; gap: 22px; }
+      .intro-item { gap: 14px; }
+      .intro-item p { font-size: 10px; }
+      section.content { padding: 76px 0; }
+      .section-head { display: block; margin-bottom: 29px; }
+      .section-head h2 { font-size: 34px; }
+      .section-head p { margin-top: 12px; font-size: 11px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: auto; padding: 22px 33px 24px 0; }
+      .service + .service { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .service-index { margin-bottom: 18px; }
+      .service h3 { margin-bottom: 9px; font-size: 20px; }
+      .service p { font-size: 11px; }
+      .service-mark { top: 24px; right: 4px; }
+      .approach { grid-template-columns: 1fr; }
+      .approach-art { min-height: 360px; }
+      .approach-copy { padding: 44px 22px 50px; }
+      .approach-copy h2 { font-size: 34px; }
+      .approach-copy > p { font-size: 11px; }
+      .visit { padding-bottom: 78px !important; }
+      .visit-steps { grid-template-columns: 1fr; }
+      .visit-step, .visit-step + .visit-step { padding: 21px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .visit-step .step-dot { margin-bottom: 16px; }
+      .visit-step p { font-size: 11px; }
+      .faq { display: block; padding: 67px 0 78px; }
+      .faq h2 { font-size: 34px; }
+      .faq > div:first-child p { margin: 8px 0 24px; }
+      summary { padding: 17px 0; font-size: 12px; }
+      details p { font-size: 11px; }
+      .contact { padding: 61px 0; }
+      .contact-inner { grid-template-columns: 1fr; gap: 30px; }
+      .contact h2 { font-size: 36px; }
+      .contact-info { gap: 18px 15px; }
+      .contact-info div { font-size: 11px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"><span>ONGYEOL</span> 피부의 오늘을 살피고, 내일의 편안함을 생각합니다.</div>
+  <header class="shell nav">
+    <a class="brand" href="#top" aria-label="온결 피부과 홈">
+      <span class="brand-mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M10 2.5c0 4.5-2 6.5-6.5 7.5 4.5 0 6.5 2 6.5 7.5 0-5.5 2-7.5 6.5-7.5-4.5-1-6.5-3-6.5-7.5Z" stroke="currentColor" stroke-width="1.15"/></svg></span>
+      온결 피부과
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">메뉴</button>
+    <nav class="nav-links" id="main-nav" aria-label="주요 메뉴">
+      <a href="#care">진료 안내</a><a href="#approach">진료 철학</a><a href="#visit">내원 안내</a><a href="#faq">자주 묻는 질문</a><a class="nav-cta" href="#contact">상담 안내</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">피부를 대하는 다정한 기준</p>
+        <h1 id="hero-title">피부를 살피는 일은<br>나를 알아가는 일.</h1>
+        <p>매일 달라지는 피부의 이야기에 귀 기울입니다.<br>충분한 상담부터 차분한 진료까지, 한 사람의 속도에 맞춰 함께합니다.</p>
+        <div class="hero-actions"><a class="button primary" href="#contact">진료 안내 보기 <span class="arrow">↗</span></a><a class="button secondary" href="#care">진료 분야 살펴보기</a></div>
+        <div class="hero-note">피부 상태와 생활 습관을 함께 살피는 상담</div>
+      </div>
+      <div class="hero-art" aria-label="온결 피부과의 차분한 진료 분위기를 표현한 일러스트" role="img">
+        <div class="art-wash"></div>
+        <svg class="portrait" viewBox="0 0 540 620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="face" x1="169" y1="112" x2="373" y2="455" gradientUnits="userSpaceOnUse"><stop stop-color="#F1E9D9"/><stop offset="1" stop-color="#C4CDBB"/></linearGradient><linearGradient id="hair" x1="115" y1="100" x2="396" y2="472" gradientUnits="userSpaceOnUse"><stop stop-color="#56685D"/><stop offset="1" stop-color="#34483E"/></linearGradient><linearGradient id="cloth" x1="124" y1="413" x2="432" y2="614" gradientUnits="userSpaceOnUse"><stop stop-color="#E6E9DD"/><stop offset="1" stop-color="#A8B8A9"/></linearGradient></defs>
+          <circle cx="312" cy="260" r="166" fill="#E8E9DC" fill-opacity=".62"/>
+          <path d="M94 620c15-116 63-186 149-207 19-5 51-8 74-7 111 4 184 76 196 214H94Z" fill="url(#cloth)"/>
+          <path d="M157 237c0-104 39-166 130-166 83 0 126 61 126 163v70c-1 88-59 148-128 148-71 0-128-61-128-147v-68Z" fill="url(#hair)"/>
+          <path d="M184 240c0-78 31-127 100-127 63 0 98 47 98 127v72c0 72-44 124-99 124-56 0-99-53-99-125v-71Z" fill="url(#face)"/>
+          <path d="M180 238c8-67 36-102 85-116 42-12 84-3 117 27 18 17 27 38 30 69-34-21-58-53-72-94-39 54-89 82-160 86Z" fill="#506258"/>
+          <path d="M203 260c13-8 26-9 39-3M323 257c14-7 27-6 39 2" stroke="#536257" stroke-width="3" stroke-linecap="round"/>
+          <path d="M226 283c7 1 13 1 19-1M337 281c7 1 13 1 19-1" stroke="#37473F" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M291 283c-2 28-9 47-15 61 8 6 17 8 28 5" stroke="#9B9C86" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M264 374c17 12 37 12 55-1" stroke="#9B786D" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M185 291c-19-10-30 3-25 30 3 19 14 29 27 26M382 291c18-10 28 2 24 29-3 18-13 28-25 26" fill="url(#face)"/>
+          <path d="M188 415c28 23 57 35 97 35 40 0 67-12 93-35l44 33-65 172H196l-60-173 52-32Z" fill="url(#face)"/>
+          <path d="M205 481c38 30 114 31 153 0l67 139H130l75-139Z" fill="url(#cloth)"/>
+          <path d="M238 441c9 23 29 34 50 34s41-11 51-34" stroke="#ABB29F" stroke-width="2"/>
+          <path d="M113 585c18-76 38-111 77-142m231 144c-16-71-39-111-78-144" stroke="#F5F5EC" stroke-opacity=".74" stroke-width="1.3"/>
+        </svg>
+        <div class="side-index">SKIN · CARE · BALANCE</div>
+        <div class="hero-caption"><span>ONGYEOL DERMATOLOGY</span>나답게 편안한 피부를 위해</div>
+      </div>
+    </section>
+
+    <section class="intro-band" aria-label="진료 원칙">
+      <div class="shell intro-inner">
+        <div class="intro-item"><span class="intro-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 2.5c0 4.5-2 6.5-6.5 7.5 4.5 0 6.5 2 6.5 7.5 0-5.5 2-7.5 6.5-7.5-4.5-1-6.5-3-6.5-7.5Z" stroke="currentColor"/></svg></span><div><strong>충분히 듣는 상담</strong><p>불편함과 고민을 먼저 듣고<br>진료 방향을 함께 살핍니다.</p></div></div>
+        <div class="intro-item"><span class="intro-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M10 3v14M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width=".9"/></svg></span><div><strong>피부 상태에 맞춘 안내</strong><p>피부와 생활 습관을 살펴<br>필요한 선택지를 설명합니다.</p></div></div>
+        <div class="intro-item"><span class="intro-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 14.5c2.5-6 5-9 7-9s4.5 3 7 9M4 16h12" stroke="currentColor" stroke-linecap="round"/></svg></span><div><strong>편안한 진료 환경</strong><p>차분한 공간에서 부담 없이<br>질문하고 상의하실 수 있습니다.</p></div></div>
+      </div>
+    </section>
+
+    <section class="shell content" id="care" aria-labelledby="care-title">
+      <div class="section-head"><h2 id="care-title">피부 고민에 맞는<br>진료를 안내합니다.</h2><p>피부 증상과 상태는 사람마다 다릅니다. 상담을 통해 현재 피부를 살펴보고 적절한 진료 방향을 안내합니다.</p></div>
+      <div class="service-grid">
+        <article class="service"><span class="service-index">피부 질환</span><span class="service-mark" aria-hidden="true">◌</span><h3>피부 질환 진료</h3><p>여드름, 습진, 피부염 등 다양한 피부 증상에 대해 진찰과 상담을 진행합니다.</p></article>
+        <article class="service"><span class="service-index">피부 관리</span><span class="service-mark" aria-hidden="true">⌁</span><h3>피부 상태 상담</h3><p>건조함, 민감함, 색소 고민 등 피부 상태와 생활 습관을 함께 살펴봅니다.</p></article>
+        <article class="service"><span class="service-index">진료 후 관리</span><span class="service-mark" aria-hidden="true">✳</span><h3>관리 방법 안내</h3><p>진료 후 일상에서 참고할 수 있는 피부 관리 방법을 설명해 드립니다.</p></article>
+      </div>
+    </section>
+
+    <section class="approach" id="approach" aria-labelledby="approach-title">
+      <div class="approach-art" aria-hidden="true">
+        <svg viewBox="0 0 500 490" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M249 54c-79 0-126 56-126 146v60c0 93 54 154 126 154s126-61 126-154v-60c0-90-47-146-126-146Z" stroke="#F5F6ED" stroke-width="1.3"/><path d="M168 208c13-8 29-9 43-2m83 0c14-7 30-6 43 2M193 233h20m94 0h20m-82 67c8 7 16 10 25 10s18-3 26-10m-62 68c21 12 51 12 73 0" stroke="#657B6B" stroke-width="2" stroke-linecap="round"/><path d="M122 201c13-91 54-139 128-139 70 0 112 45 126 129-40-19-72-52-95-97-31 52-82 87-159 107Z" stroke="#40584B" stroke-width="2"/><path d="M91 468c23-96 69-144 158-144s135 48 159 144" stroke="#F5F6ED" stroke-width="1.3"/><path d="M202 329c8 24 25 37 48 37s40-13 48-37" stroke="#9CA995" stroke-width="1.5"/></svg>
+        <div class="approach-label">A LITTLE MORE ATTENTIVE</div>
+      </div>
+      <div class="approach-copy">
+        <p class="eyebrow">온결의 진료 방식</p>
+        <h2 id="approach-title">정답을 서두르기보다<br>피부를 먼저 이해합니다.</h2>
+        <p>같은 고민도 피부의 상태와 생활 환경에 따라 살펴볼 점이 다를 수 있습니다. 온결은 충분한 문진과 진찰을 바탕으로 이해하기 쉬운 설명을 드립니다.</p>
+        <ul class="approach-list"><li><span>상담</span>불편한 점과 원하는 방향을 충분히 듣습니다.</li><li><span>진찰</span>피부 상태를 살피고 필요한 내용을 확인합니다.</li><li><span>안내</span>진료 선택지와 관리 방법을 설명합니다.</li></ul>
+      </div>
+    </section>
+
+    <section class="shell content visit" id="visit" aria-labelledby="visit-title">
+      <div class="section-head"><h2 id="visit-title">처음 오시는 날도<br>편안하도록.</h2><p>내원 전 예약 여부와 진료 가능 시간을 확인해 주세요. 정확한 운영 정보는 병원에 문의하실 수 있습니다.</p></div>
+      <div class="visit-steps">
+        <article class="visit-step"><div class="step-dot"></div><h3>예약 및 문의</h3><p>방문 전 상담을 통해 예약 방법과 진료 가능 시간을 확인해 주세요.</p></article>
+        <article class="visit-step"><div class="step-dot"></div><h3>문진 및 진찰</h3><p>피부 고민과 불편한 점을 확인하고 현재 상태를 살펴봅니다.</p></article>
+        <article class="visit-step"><div class="step-dot"></div><h3>진료 방향 안내</h3><p>진찰 결과에 따라 진료와 관리에 필요한 내용을 설명합니다.</p></article>
+      </div>
+    </section>
+
+    <section class="shell faq" id="faq" aria-labelledby="faq-title">
+      <div><h2 id="faq-title">자주 묻는 질문</h2><p>방문 전 궁금한 내용을 확인해 보세요.</p></div>
+      <div class="faq-list">
+        <details><summary>처음 방문할 때 예약이 필요한가요?</summary><p>진료 일정과 예약 방법은 병원 운영 정보에 따라 달라질 수 있습니다. 방문 전 전화 또는 예약 채널을 통해 확인해 주세요.</p></details>
+        <details><summary>어떤 진료를 받을 수 있나요?</summary><p>피부 질환 진료와 피부 상태 상담을 안내하고 있습니다. 증상과 진료 가능 여부는 내원 후 의료진의 진찰을 통해 확인할 수 있습니다.</p></details>
+        <details><summary>진료 시간과 위치는 어디서 확인하나요?</summary><p>정확한 주소, 진료 시간, 휴진일은 병원 연락처와 함께 이 페이지에 업데이트될 예정입니다. 방문 전 최신 정보를 확인해 주세요.</p></details>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-inner">
+        <h2 id="contact-title">궁금한 점부터<br><span>편안하게 물어보세요.</span></h2>
+        <div class="contact-info">
+          <div><small>전화 문의</small><strong>전화번호 입력 예정</strong></div>
+          <div><small>진료 시간</small><strong>운영 시간 입력 예정</strong></div>
+          <div><small>위치</small><strong>주소 입력 예정</strong></div>
+          <div><small>예약</small><strong>예약 채널 입력 예정</strong></div>
+          <p class="contact-status">정확한 진료 정보와 예약 연락처는 병원 운영 정보에 맞춰 업데이트해 주세요.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><div><div class="footer-brand">온결 피부과</div><div class="footer-meta">주소 · 전화번호 · 사업자 정보 입력 예정</div></div><div class="footer-right">본 페이지는 병원 안내를 위한 웹사이트 시안입니다.<br>의료 정보는 진료 후 의료진의 설명을 확인해 주세요.</div></div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(open));
+      navigation.classList.toggle('is-open', open);
+    });
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        navigation.classList.remove('is-open');
+      }
+    });
+  </script>
+</body>
+</html>

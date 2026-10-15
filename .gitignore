@@ -1,0 +1,26 @@
+# Secrets and local environment settings
+.env
+.env.*
+*.local
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Private Sites project metadata
+.openai/hosting.json
+
+# Dependencies and generated output
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+
+# Local operating system and editor files
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
